@@ -4,19 +4,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
-import mistImage from './assests/mist.jpg';
-import clearImage from './assests/clear.jpg';
-import cloudsImage from './assests/clouds.jpg';
-import snowImage from './assests/snow.jpg';
-import rainImage from './assests/rain.jpg';
-import drizzleImage from './assests/drizzle.jpg';
-import thunderstormImage from './assests/thunderstorm.jpg';
-import fogImage from './assests/fog.jpg';
-
-
-
-
-
+import mistImage from './assets/mist.jpg';
+import clearImage from './assets/clear.jpg';
+import cloudsImage from './assets/clouds.jpg';
+import snowImage from './assets/snow.jpg';
+import rainImage from './assets/rain.jpg';
+import drizzleImage from './assets/drizzle.jpg';
+import thunderstormImage from './assets/thunderstorm.jpg';
+import fogImage from './assets/fog.jpg';
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -52,8 +47,8 @@ function App() {
       case "clouds":
         setBackgroundImage(`url(${cloudsImage})`);
         break;
-        case "clear":
-          setBackgroundImage(`url(${clearImage})`);
+      case "clear":
+        setBackgroundImage(`url(${clearImage})`);
         break;
       case "snow":
         setBackgroundImage(`url(${snowImage})`);
@@ -85,12 +80,13 @@ function App() {
       className="App"
       style={{
         backgroundImage: backgroundImage,
-        backgroundSize: "fit",
+        backgroundSize: "cover",  // Adjust background size
         backgroundRepeat: "no-repeat",
         height: "100vh",
         width: "100%",
       }}
     >
+      {/* The m-2 p-5 container is placed here to float above the background image */}
       <div className="m-2 p-5">
         <Container>
           <Row>
