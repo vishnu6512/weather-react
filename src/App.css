@@ -1,0 +1,42 @@
+.left-section {
+  border-right: 2px solid #ebe9e9; /* Add a solid border to the right side */
+}
+
+.right-section {
+  border-left: 2px solid #ebe9e9; /* Add a solid border to the left side */
+}
+
+/* Ensure body and html take up the full height of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  background-size: cover; /* Ensures the image fully covers the area */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center center; /* Centers the image */
+  background-attachment: fixed; /* Keeps the background in place on scroll */
+}
+
+
+/* Optionally, make sure the container takes full height */
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-2.p-5 {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blurs the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for definition */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  padding: 20px; /* Adjust padding as needed */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional subtle shadow for depth */
+}
+
+
