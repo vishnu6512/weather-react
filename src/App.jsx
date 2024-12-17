@@ -15,6 +15,9 @@ import fogImage from './assets/fog.jpg';
 import hazeImage from './assets/haze.jpg'
 import smokeImage from './assets/smoke.jpg'
 import logoImage from './assets/logo.png'
+ 
+//import WeatherDetails from "./components/WeatherDetails";
+
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -142,17 +145,19 @@ function App() {
                   <h1 style={{ fontSize: "80px", fontWeight: "bold" }}>
                     {weatherDetails.main.temp}°C
                   </h1>
-                  <h2>{weatherDetails.weather[0].main}</h2>
+                  {/* <h2>{weatherDetails.weather[0].main}</h2> */}
+                  <h3>{weatherDetails.weather[0].description.toUpperCase()}</h3>
+
                   <h5>Wind Speed: {weatherDetails.wind.speed} km/h</h5>
                   <h5>Humidity: {weatherDetails.main.humidity}%</h5>
                 </div>
               )}
             </Col>
-            <Col xs={12} md={9}  className="right-section ps-5">
-            {weatherDetails ? (
-              // Render your weather details
-              (
-                
+            <Col xs={12} md={9} className="right-section ps-5">
+              {weatherDetails ? (
+                // Render your weather details
+                (
+
                   <Row className="text-center">
                     <Col xs={6} md={6} className="mb-3">
                       <h4>Feels Like</h4>
@@ -192,17 +197,18 @@ function App() {
                       </p>
                     </Col>
                   </Row>
+                )
+              ) : (
+                // Display fallback message when weatherDetails is null or undefined
+                <div className="d-flex justify-content-around">
+                  <h3>Welcome to CloudNine!</h3>
+                  <p>Enter a location to get the latest weather updates.</p>
+                  <p>Stay informed, stay prepared. Let us forecast your day, your way!</p>
+                </div>
               )
-            ) : (
-              // Display fallback message when weatherDetails is null or undefined
-              <div>
-                <h3>Welcome to CloudNine!</h3>
-                <p>Enter a location to get the latest weather updates.</p>
-                <p>Stay informed, stay prepared. Let us forecast your day, your way!</p>
-              </div>
-            )
-            }
+              }
             </Col>
+            
 
 
 
