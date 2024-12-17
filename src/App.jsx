@@ -12,6 +12,8 @@ import rainImage from './assets/rain.jpg';
 import drizzleImage from './assets/drizzle.jpg';
 import thunderstormImage from './assets/thunderstorm.jpg';
 import fogImage from './assets/fog.jpg';
+import hazeImage from './assets/haze.jpg'
+import smokeImage from './assets/smoke.jpg'
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -65,6 +67,10 @@ function App() {
       case "fog":
         setBackgroundImage(`url(${fogImage})`);
         break;
+      case "haze":
+        setBackgroundImage(`url(${hazeImage})`);
+      case "smoke":
+        setBackgroundImage(`url(${smokeImage})`)
       default:
         setBackgroundImage("");
     }
