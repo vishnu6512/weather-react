@@ -97,8 +97,8 @@ function App() {
     >
       <div
         style={{
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
-          backdropFilter: "blur(10px)",
+          backgroundColor: "rgba(255, 255, 255, 0.2",
+          backdropFilter: "blur(1px)",
         }}
         className="d-flex flex-column justify-content-center align-items-center"
       >
@@ -143,6 +143,7 @@ function App() {
                   </h1>
                   <h5>Wind Speed: {weatherDetails.wind.speed} km/h</h5>
                   <h5>Humidity: {weatherDetails.main.humidity}%</h5>
+                  <h5>{weatherDetails.weather[0].main}</h5>
                 </div>
               )}
             </Col>
@@ -151,38 +152,38 @@ function App() {
                 <Row className="text-center">
                   <Col xs={6} md={6} className="mb-3">
                     <h4>Feels Like</h4>
-                    <p style={{ fontSize: "20px" }}>
+                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)"}}>
                       {weatherDetails.main.feels_like}°C
                     </p>
                   </Col>
                   <Col xs={6} md={6} className="mb-3">
                     <h4>Min / Max</h4>
-                    <p style={{ fontSize: "20px" }}>
+                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
                       {weatherDetails.main.temp_min}°C /{" "}
                       {weatherDetails.main.temp_max}°C
                     </p>
                   </Col>
                   <Col xs={6} md={6} className="mb-3">
                     <h4>Visibility</h4>
-                    <p style={{ fontSize: "20px" }}>
+                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
                       {weatherDetails.visibility / 1000} km
                     </p>
                   </Col>
                   <Col xs={6} md={6} className="mb-3">
                     <h4>Clouds</h4>
-                    <p style={{ fontSize: "20px" }}>
+                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
                       {weatherDetails.clouds.all}%
                     </p>
                   </Col>
                   <Col xs={6} md={6} className="mb-3">
                     <h4>Sunrise</h4>
-                    <p style={{ fontSize: "20px" }}>
+                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
                       {formatTime(weatherDetails.sys.sunrise)}
                     </p>
                   </Col>
                   <Col xs={6} md={6} className="mb-3">
                     <h4>Sunset</h4>
-                    <p style={{ fontSize: "20px" }}>
+                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
                       {formatTime(weatherDetails.sys.sunset)}
                     </p>
                   </Col>
