@@ -69,8 +69,10 @@ function App() {
         break;
       case "haze":
         setBackgroundImage(`url(${hazeImage})`);
+        break;
       case "smoke":
         setBackgroundImage(`url(${smokeImage})`)
+        break;
       default:
         setBackgroundImage("");
     }
