@@ -136,60 +136,77 @@ function App() {
                   </button>
                 </Col>
               </Row>
+
               {weatherDetails && (
                 <div className="text-center mt-4">
                   <h1 style={{ fontSize: "80px", fontWeight: "bold" }}>
                     {weatherDetails.main.temp}°C
                   </h1>
+                  <h2>{weatherDetails.weather[0].main}</h2>
                   <h5>Wind Speed: {weatherDetails.wind.speed} km/h</h5>
                   <h5>Humidity: {weatherDetails.main.humidity}%</h5>
-                  <h5>{weatherDetails.weather[0].main}</h5>
                 </div>
               )}
             </Col>
-            {weatherDetails && (
-              <Col xs={12} md={9} className="right-section">
-                <Row className="text-center">
-                  <Col xs={6} md={6} className="mb-3">
-                    <h4>Feels Like</h4>
-                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)"}}>
-                      {weatherDetails.main.feels_like}°C
-                    </p>
-                  </Col>
-                  <Col xs={6} md={6} className="mb-3">
-                    <h4>Min / Max</h4>
-                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
-                      {weatherDetails.main.temp_min}°C /{" "}
-                      {weatherDetails.main.temp_max}°C
-                    </p>
-                  </Col>
-                  <Col xs={6} md={6} className="mb-3">
-                    <h4>Visibility</h4>
-                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
-                      {weatherDetails.visibility / 1000} km
-                    </p>
-                  </Col>
-                  <Col xs={6} md={6} className="mb-3">
-                    <h4>Clouds</h4>
-                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
-                      {weatherDetails.clouds.all}%
-                    </p>
-                  </Col>
-                  <Col xs={6} md={6} className="mb-3">
-                    <h4>Sunrise</h4>
-                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
-                      {formatTime(weatherDetails.sys.sunrise)}
-                    </p>
-                  </Col>
-                  <Col xs={6} md={6} className="mb-3">
-                    <h4>Sunset</h4>
-                    <p style={{ fontSize: "20px", color:'rgb(255, 255, 255) ',textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
-                      {formatTime(weatherDetails.sys.sunset)}
-                    </p>
-                  </Col>
-                </Row>
-              </Col>
-            )}
+            <Col xs={12} md={9}  className="right-section ps-5">
+            {weatherDetails ? (
+              // Render your weather details
+              (
+                
+                  <Row className="text-center">
+                    <Col xs={6} md={6} className="mb-3">
+                      <h4>Feels Like</h4>
+                      <p style={{ fontSize: "20px", color: 'rgb(255, 255, 255) ', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                        {weatherDetails.main.feels_like}°C
+                      </p>
+                    </Col>
+                    <Col xs={6} md={6} className="mb-3">
+                      <h4>Min / Max</h4>
+                      <p style={{ fontSize: "20px", color: 'rgb(255, 255, 255) ', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                        {weatherDetails.main.temp_min}°C /{" "}
+                        {weatherDetails.main.temp_max}°C
+                      </p>
+                    </Col>
+                    <Col xs={6} md={6} className="mb-3">
+                      <h4>Visibility</h4>
+                      <p style={{ fontSize: "20px", color: 'rgb(255, 255, 255) ', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                        {weatherDetails.visibility / 1000} km
+                      </p>
+                    </Col>
+                    <Col xs={6} md={6} className="mb-3">
+                      <h4>Clouds</h4>
+                      <p style={{ fontSize: "20px", color: 'rgb(255, 255, 255) ', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                        {weatherDetails.clouds.all}%
+                      </p>
+                    </Col>
+                    <Col xs={6} md={6} className="mb-3">
+                      <h4>Sunrise</h4>
+                      <p style={{ fontSize: "20px", color: 'rgb(255, 255, 255) ', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                        {formatTime(weatherDetails.sys.sunrise)}
+                      </p>
+                    </Col>
+                    <Col xs={6} md={6} className="mb-3">
+                      <h4>Sunset</h4>
+                      <p style={{ fontSize: "20px", color: 'rgb(255, 255, 255) ', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}>
+                        {formatTime(weatherDetails.sys.sunset)}
+                      </p>
+                    </Col>
+                  </Row>
+              )
+            ) : (
+              // Display fallback message when weatherDetails is null or undefined
+              <div>
+                <h3>Welcome to CloudNine!</h3>
+                <p>Enter a location to get the latest weather updates.</p>
+                <p>Stay informed, stay prepared. Let us forecast your day, your way!</p>
+              </div>
+            )
+            }
+            </Col>
+
+
+
+
           </Row>
         </Container>
       </div>
