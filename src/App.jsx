@@ -14,6 +14,7 @@ import thunderstormImage from './assets/thunderstorm.jpg';
 import fogImage from './assets/fog.jpg';
 import hazeImage from './assets/haze.jpg'
 import smokeImage from './assets/smoke.jpg'
+import logoImage from './assets/logo.png'
 
 function App() {
   const [userInput, setUserInput] = useState("");
@@ -94,13 +95,33 @@ function App() {
         width: "100%",
       }}
     >
+      <div
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backdropFilter: "blur(10px)",
+        }}
+        className="d-flex flex-column justify-content-center align-items-center"
+      >
+        <div className="d-flex align-items-center mt-3 flex-column flex-md-row">
+          <h1 style={{ fontSize: "80px", marginRight: "15px", textAlign: "center" }}>CloudNine</h1>
+          <img
+            src={logoImage}
+            style={{ height: "100px", width: "auto", marginTop: "10px" }}
+            alt="CloudNine Logo"
+          />
+        </div>
+        <p style={{ color: "black", fontSize: '20px', textAlign: "center", marginTop: "10px" }}>
+          Forecast your day, your way
+        </p>
+      </div>
+
       {/* The m-2 p-5 container is placed here to float above the background image */}
-      <div className="m-2 p-5">
+      <div className="m-5 p-5">
         <Container>
           <Row>
-            <Col md={3} className="left-section">
+            <Col xs={12} md={3} className="left-section">
               <Row className="mb-3">
-                <Col className="d-flex">
+                <Col xs={8} md={8} className="d-flex">
                   <input
                     type="text"
                     placeholder="Enter location"
@@ -108,7 +129,9 @@ function App() {
                     value={userInput}
                     className="form-control mb-2"
                   />
-                  <button onClick={getWeather} className="btn btn-primary">
+                </Col>
+                <Col xs={4} md={4} className="d-flex">
+                  <button onClick={getWeather} className="btn btn-primary w-100">
                     <i className="fa-solid fa-arrow-right"></i>
                   </button>
                 </Col>
@@ -124,40 +147,40 @@ function App() {
               )}
             </Col>
             {weatherDetails && (
-              <Col md={9} className="right-section">
+              <Col xs={12} md={9} className="right-section">
                 <Row className="text-center">
-                  <Col md={6} className="mb-3">
+                  <Col xs={6} md={6} className="mb-3">
                     <h4>Feels Like</h4>
                     <p style={{ fontSize: "20px" }}>
                       {weatherDetails.main.feels_like}°C
                     </p>
                   </Col>
-                  <Col md={6} className="mb-3">
+                  <Col xs={6} md={6} className="mb-3">
                     <h4>Min / Max</h4>
                     <p style={{ fontSize: "20px" }}>
                       {weatherDetails.main.temp_min}°C /{" "}
                       {weatherDetails.main.temp_max}°C
                     </p>
                   </Col>
-                  <Col md={6} className="mb-3">
+                  <Col xs={6} md={6} className="mb-3">
                     <h4>Visibility</h4>
                     <p style={{ fontSize: "20px" }}>
                       {weatherDetails.visibility / 1000} km
                     </p>
                   </Col>
-                  <Col md={6} className="mb-3">
+                  <Col xs={6} md={6} className="mb-3">
                     <h4>Clouds</h4>
                     <p style={{ fontSize: "20px" }}>
                       {weatherDetails.clouds.all}%
                     </p>
                   </Col>
-                  <Col md={6} className="mb-3">
+                  <Col xs={6} md={6} className="mb-3">
                     <h4>Sunrise</h4>
                     <p style={{ fontSize: "20px" }}>
                       {formatTime(weatherDetails.sys.sunrise)}
                     </p>
                   </Col>
-                  <Col md={6} className="mb-3">
+                  <Col xs={6} md={6} className="mb-3">
                     <h4>Sunset</h4>
                     <p style={{ fontSize: "20px" }}>
                       {formatTime(weatherDetails.sys.sunset)}

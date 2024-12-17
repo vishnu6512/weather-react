@@ -29,7 +29,7 @@ html, body {
   flex-direction: column;
 }
 
-.m-2.p-5 {
+.m-5.p-5 {
   background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blurs the background */
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
@@ -37,6 +37,8 @@ html, body {
   border-radius: 10px; /* Rounded corners for a modern look */
   padding: 20px; /* Adjust padding as needed */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional subtle shadow for depth */
+  font-weight:bolder;
+  
   
 }
 
